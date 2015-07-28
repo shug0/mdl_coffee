@@ -130,50 +130,34 @@
 
 <body <?php body_class(); ?>>
 
-		<!-- Uses a transparent header that draws on top of the layout's background -->
-		<style>
-		.layout-transparent {
-			<?php if (true == of_get_option('meta_header_image')) {
-					echo 'background: url("' . of_get_option('meta_header_image') . '") center / cover;';
-				}?>
-		}
-		.layout-transparent .mdl-layout__header,
-		.layout-transparent .mdl-layout__drawer-button {
-		  color: white;
-		}
-		</style>
-		<div class="layout-transparent mdl-layout mdl-js-layout">
-		  <header class="mdl-layout__header mdl-layout__header--transparent">
-		    <div class="mdl-layout__header-row">
-		      <!-- Title -->
-		      <span class="mdl-layout-title"><?php bloginfo( 'name' ); ?></span>
-		      <!-- Add spacer, to align navigation to the right -->
-		      <div class="mdl-layout-spacer"></div>
-		      <!-- Navigation -->
-		      <nav class="mdl-navigation">
+<?php	
+$menuParameters = array('container' => false, 'echo' => false, 'items_wrap' => '%3$s', 'depth' => 0 );
+$menu = str_replace('<a href=', '<a class="mdl-navigation__link" href=', strip_tags(wp_nav_menu( $menuParameters ), '<a>' )); 
+?>
+ 
+ <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+      	<?php echo $menu ?>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      	<?php echo $menu ?>
+    </nav>
+  </div>
 
-				<?php
-					$menuParameters = array(
-					  'container'       => false,
-					  'echo'            => false,
-					  'items_wrap'      => '%3$s',
-					  'depth'           => 0,
-					);
-					echo str_replace('<a href=', '<a class="mdl-navigation__link" href=', 
-						strip_tags(wp_nav_menu( $menuParameters ), '<a>' )); ?>
-				 
-		      </nav>
-		    </div>
-		  </header>
-		  <div class="mdl-layout__drawer">
-		    <span class="mdl-layout-title">Title</span>
-		    <nav class="mdl-navigation">
-			<?php echo str_replace('<a href=', '<a class="mdl-navigation__link" href=', 
-				strip_tags(wp_nav_menu( $menuParameters ), '<a>' ));  ?>
-
-		    </nav>
-		  </div>
-		  <main class="mdl-layout__content">
-		  </main>
-		</div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+    
+    <!-- Your content goes here -->
 

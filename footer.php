@@ -5,12 +5,38 @@
  * @since HTML5 Reset 2.0
  */
 ?>
-		<footer id="footer" class="source-org vcard copyright" role="contentinfo">
-			<small>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></small>
-		</footer>
 
 
-	<?php wp_footer(); ?>
+    </div>
+    
+    <footer class="mdl-mini-footer">
+      <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">
+          Mini-footer Heading
+        </div>
+        <ul class="mdl-mini-footer__link-list">
+          <li><a href="">Link 1</a></li>
+          <li><a href="">Link 2</a></li>
+          <li><a href="">Link 3</a></li>
+        </ul>
+      </div>
+      <div class="mdl-mini-footer__right-section">
+        <button class="mdl-mini-footer__social-btn"></button>
+        <button class="mdl-mini-footer__social-btn"></button>
+        <button class="mdl-mini-footer__social-btn"></button>
+      </div>
+    </footer>
+
+
+  </main>
+
+</div>
+
+
+
+
+<?php wp_footer(); ?>
+
 
 
 <!-- jQuery is called via the WordPress-friendly way via functions.php -->
