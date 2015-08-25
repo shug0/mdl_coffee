@@ -10,10 +10,16 @@
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. -->
 
 <head id="<?php echo of_get_option('meta_headid'); ?>" data-template-set="html5-reset-wordpress-theme">
+
+	<style>
+		.mdl-layout {
+			height: auto;
+			min-height: 100%;
+			position:relative;
+		}
+	</style>
 
 	<meta charset="<?php bloginfo('charset'); ?>">
 
@@ -79,20 +85,15 @@
 			echo '<link rel="apple-touch-icon" href="' . of_get_option("head_apple_touch_icon") . '">';
 	?>
 
-	<!-- material design lite files -->
-	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.indigo-pink.min.css">
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
 	<!-- concatenate and minify for production -->
+
+	<!-- material design lite files -->
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/_/css/material.indigo-pink.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<!-- Lea Verou's Prefix Free, lets you use only un-prefixed properties in yuor CSS files -->
     <script src="<?php echo get_template_directory_uri(); ?>/_/js/prefixfree.min.js"></script>
-
-	<!-- This is an un-minified, complete version of Modernizr.
-		 Before you move to production, you should generate a custom build that only has the detects you need. -->
-	<script src="<?php echo get_template_directory_uri(); ?>/_/js/modernizr-2.8.0.dev.js"></script>
 
 	<!-- Application-specific meta tags -->
 	<?php
@@ -102,7 +103,6 @@
 			echo '<meta name="msapplication-TileColor" content="' . of_get_option("meta_app_win_color") . '" /> ';
 			echo '<meta name="msapplication-TileImage" content="' . of_get_option("meta_app_win_image") . '" />';
 		}
-
 		// Twitter
 		if (true == of_get_option('meta_app_twt_card')) {
 			echo '<meta name="twitter:card" content="' . of_get_option("meta_app_twt_card") . '" />';
@@ -111,7 +111,6 @@
 			echo '<meta name="twitter:description" content="' . of_get_option("meta_app_twt_description") . '" />';
 			echo '<meta name="twitter:url" content="' . of_get_option("meta_app_twt_url") . '" />';
 		}
-
 		// Facebook
 		if (true == of_get_option('meta_app_fb_title')) {
 			echo '<meta property="og:title" content="' . of_get_option("meta_app_fb_title") . '" />';
@@ -136,11 +135,12 @@ $menu = str_replace('<a href=', '<a class="mdl-navigation__link" href=', strip_t
 ?>
  
  <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<main class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title"><a href='<?php echo site_url() ?>'><?php bloginfo('name'); ?></a></span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -149,15 +149,11 @@ $menu = str_replace('<a href=', '<a class="mdl-navigation__link" href=', strip_t
       </nav>
     </div>
   </header>
+
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
+    <span class="mdl-layout-title"><?php bloginfo('name'); ?></span>
     <nav class="mdl-navigation">
       	<?php echo $menu ?>
     </nav>
   </div>
-
-  <main class="mdl-layout__content">
-    <div class="page-content">
-    
-    <!-- Your content goes here -->
 

@@ -7,42 +7,33 @@
 ?>
 
 
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+      <div class="mdl-logo">
+        Mini-footer Heading
+      </div>
+      <ul class="mdl-mini-footer__link-list">
+        <li><a href="">Link 1</a></li>
+        <li><a href="">Link 2</a></li>
+        <li><a href="">Link 3</a></li>
+      </ul>
     </div>
-    
-    <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">
-          Mini-footer Heading
-        </div>
-        <ul class="mdl-mini-footer__link-list">
-          <li><a href="">Link 1</a></li>
-          <li><a href="">Link 2</a></li>
-          <li><a href="">Link 3</a></li>
-        </ul>
-      </div>
-      <div class="mdl-mini-footer__right-section">
-        <button class="mdl-mini-footer__social-btn"></button>
-        <button class="mdl-mini-footer__social-btn"></button>
-        <button class="mdl-mini-footer__social-btn"></button>
-      </div>
-    </footer>
-
-
-  </main>
-
-</div>
-
-
-
+    <div class="mdl-mini-footer__right-section">
+      <button class="mdl-mini-footer__social-btn"></button>
+      <button class="mdl-mini-footer__social-btn"></button>
+      <button class="mdl-mini-footer__social-btn"></button>
+    </div>
+  </footer>
 
 <?php wp_footer(); ?>
 
+</main>
 
 
 <!-- jQuery is called via the WordPress-friendly way via functions.php -->
-
 <!-- this is where we put our custom functions -->
-<script src="<?php bloginfo('template_directory'); ?>/_/js/functions.js"></script>
+<script async src="<?php bloginfo('template_directory'); ?>/_/js/functions.js"></script>
+<script async src="<?php bloginfo('template_directory'); ?>/_/js/material.min.js"></script>
 
 <!-- Asynchronous google analytics; this is the official snippet.
          Replace UA-XXXXXX-XX with your site's ID and domainname.com with your domain, then uncomment to enable.

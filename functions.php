@@ -130,11 +130,19 @@
 		);
 	}
 
-
+	// Customize the size of the excerpt
 	function custom_excerpt_length( $length ) {
-		return 20;
+		return 18;
 	}
 	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+	// Calling external files for registering taxonomys and post
+	include_once( get_template_directory() . '/register_custom.php' );
 
+	// Remove Admin Bar
+	function my_function_admin_bar(){
+	    return false;
+	}
+	add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+	
 ?>

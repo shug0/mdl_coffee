@@ -1,9 +1,101 @@
 /*
-Theme Name: The HTML5 Reset Theme
-Theme URI: http://html5reset.org
-Description: A style-free theme to get you started on an HTML5-based WordPress theme of your own.
-Author: Monkey Do! + @ckhicks
-Author URI: http://monkeydo.biz
-Version: 2.0
+Theme Name: Material Design Lite 
+Theme URI: http://acoffee.me/
+Description: A Material Design Lite Wordpress Template
+Author: Thomas Alberola
+Author URI: http://needacoffee.fr
+Version: 1.0
 */
 
+
+/* GLOBAL */
+
+body {
+	font-family: 'Roboto','Helvetica','Arial',sans-serif !important;
+	background: #eee;
+}
+.mdl-layout {
+	height: auto;
+	min-height: 100%;
+	position:relative;
+}
+
+footer {
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+}
+.mdl-grid {
+	margin-top: 1.5em;
+	padding-bottom: 11em;
+	max-width: 1160px;
+}
+.mdl-cell {
+	padding: 1em;
+}
+.mdl-card {
+	width: 100%;
+}
+.mdl-card__title {
+	height: 160px;
+    color: #fff;
+}
+#posts_nav_link {
+	margin: 25px auto;
+}
+#posts_nav_link > a {
+	color: #000;
+	text-decoration: none;
+}
+
+/* HEADER */
+
+.mdl-layout__header-row a {
+	font-weight: 300;
+	color: white;
+	text-decoration: none;
+}
+
+/* HOME */
+
+.home article.mdl-card > header > h2,
+.home article.mdl-card > header > div {
+	text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+
+.home article.mdl-card > header > h2 > a {
+	color: white;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.home article.mdl-card > header > div {
+	top: 1em;
+	right: 1.2em;
+	position: absolute;
+}
+
+/* SINGLE & PAGE */
+.post header {
+	color: white;
+}
+.single article header,
+.page article header {
+	color: white;
+	padding: 0.5em 2em;
+	margin: -3em -3em 2em;
+	height: 150px;
+} 
+.single article header h1,
+.page article header h1 {
+	font-size: 32px;
+	font-weight: 300;
+	text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+
+}
+.single .mdl-cell,
+.page .mdl-cell {
+	padding: 3em;
+}
